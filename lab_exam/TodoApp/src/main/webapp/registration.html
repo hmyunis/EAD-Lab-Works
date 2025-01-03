@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnlineBookStore App | Register A Book</title>
+</head>
+<body>
+  <h1>Welcome to my Bookstore!</h1>
+  <h2>Register your book below:</h2>
+  <!-- Before DispatcherServlet is used on Step 8 -->
+  <!-- <form action="BookRegistrationServlet" method="post"> -->
+  
+  <form action="DispatcherServlet?action=add" method="post">
+    <input type="text" name="title" placeholder="Enter the book title">
+    <input type="text" name="author" placeholder="Enter the author">
+    <input type="number" name="price" placeholder="Enter the price">
+    <button type="submit">Register</button>
+  </form>
+  <a href="index.html">Go Back</a>
+</body>
+</html>

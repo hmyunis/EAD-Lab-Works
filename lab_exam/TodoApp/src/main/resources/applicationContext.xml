@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+  
+	<!-- bean definitions here -->
+	<bean id="dbManager" class="com.ioc.qsevenonwards.DBConnectionManager">
+    <property name="url" value="jdbc:mysql://localhost:3306/bookstore_db"></property>
+    <property name="username" value="root"></property>
+    <property name="password" value="3832"></property>
+  </bean>
+	
+	<bean id="BookRegistrationServlet" class="com.ioc.qsevenonwards.BookRegistrationServlet">
+		<constructor-arg name="dbConnectionManager" ref="dbManager" />
+	</bean>
+	
+	<!-- <bean id="DisplayBooksServlet" class="com.ioc.qsevenonwards.DisplayBooksServlet">
+		<property name="dbConnectionManager" ref="dbManager"></property>
+	</bean>
+	<bean id="DeleteBookServlet" class="com.ioc.qsevenonwards.DeleteBookServlet">
+		<property name="dbConnectionManager" ref="dbManager"></property>
+	</bean> -->
+
+</beans> 
